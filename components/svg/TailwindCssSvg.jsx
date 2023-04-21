@@ -4,8 +4,8 @@ function TailwindcssSvg() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="80"
-      height="80"
+      width="60"
+      height="60"
       preserveAspectRatio="xMidYMid"
       viewBox="0 -51 256 256"
     >

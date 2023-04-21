@@ -4,8 +4,8 @@ function HtmlSvg() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="80"
-      height="80"
+      width="60"
+      height="60"
       fill="none"
       viewBox="0 0 32 32"
     >
