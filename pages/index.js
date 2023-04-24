@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import Link from 'next/link'
-
+import ContactModal from '../components/ui/Modal'
 
 import { motion } from 'framer-motion'
 import Footer from '../components/ui/Footer'
 import SkillSection from '../components/ui/SkillSection'
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(false)
 
   const [movileMenu,setMovileMenu] = useState(true);
 
@@ -19,7 +20,7 @@ export default function Home() {
   return (
     <>
       {/* navbar section */}
-      <nav className="sticky top-0 z-30 flex justify-between bg-white/10 backdrop-blur-sm py-2">
+      <nav className="sticky top-0 z-10 flex justify-between bg-white/10 backdrop-blur-sm py-2">
         <div className="flex items-center lg:ml-28 ml-5">
           <motion.h1
             className="text-lg font-bold font-sans"
@@ -33,7 +34,11 @@ export default function Home() {
         </div>
         <div className="flex items-center space-x-10">
           <div className="hidden md:block space-x-10">
-            <ul className="flex justify-items-start space-x-5">
+            <motion.ul className="flex justify-items-start space-x-5"
+               initial={{ x: 550 }}
+               animate={{ x: 0 }}
+               transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
+            >
               <li className="py-1 px-2 text-lg text-gray-200 hover:bg-slate-200 hover:shadow-2xl  hover:text-cyan-500 active:bg-slate-700 transition-all ease-in-out duration-150 font-semibold rounded-2xl">
                 <Link href="/">
                   <span>Home</span>
@@ -54,7 +59,7 @@ export default function Home() {
                   Resume
                 </button>
               </li>
-            </ul>
+            </motion.ul>
           </div>
           <div className="lg:pr-0 pr-5">
             <button
@@ -124,7 +129,11 @@ export default function Home() {
             </h1>
 
             <Link href="/">
-              <button className="mt-3 bg-orange-500 text-md font-semibold shadow-2xl py-2 px-1 rounded-xl hover:scale-110 transition-all ease-in-out duration-200 active:scale-100">
+              <button className="mt-3 bg-orange-500 
+                text-md font-semibold shadow-2xl py-2 px-1 rounded-xl 
+                hover:scale-110 transition-all 
+                ease-in-out duration-200 active:scale-100"
+                onClick={() => setShowModal(true)}>
                 Acerca de mi
               </button>
             </Link>
@@ -140,47 +149,29 @@ export default function Home() {
         <div className="flex items-center justify-center">
           <h1 className="font-bold text-3xl text-gray-300">Portafolio</h1>
         </div>
-        <div className="flex items-start flex-col justify-start mt-10 lg:mt-20">
-          <div className="lg:flex pl-8 pr-8 pb-4">
-            <div className="bg-gray-500 w-full lg:w-1/2 flex items-center justify-center">
-              hello image
-            </div>
-            <div className="lg:w-1/2 pl-4">
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
-                quas dolor nulla reprehenderit officiis tempore repellat,
-                fugiat, aliquam molestiae cupiditate exercitationem libero
-                obcaecati tempora, hic iste. Eos, ipsa consequatur. Repellendus.
-              </p>
-            </div>
-          </div>
-          <div className="lg:flex lg:flex-row-reverse mt-16 pl-8 pr-8 pb-4">
-            <div className="bg-gray-500 w-full lg:w-1/2 flex items-center justify-center">
-              <h1>hello image</h1>
-            </div>
-            <div className="lg:w-1/2 mt-2 pl-4">
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
-                quas dolor nulla reprehenderit officiis tempore repellat,
-                fugiat, aliquam molestiae cupiditate exercitationem libero
-                obcaecati tempora, hic iste. Eos, ipsa consequatur. Repellendus.
-              </p>
+        <div className="flex items-start flex-col justify-start mt-10">
+          <div className=" pt-5 ml-5 mr-5 pl-5 pr-5 pb-4">
+            <div className="bg-slate-800 text-gray-300 rounded-2xl w-full lg:flex p-5">
+              <div className="bg-gray-500 rounded-lg w-full lg:w-1/2 flex items-center justify-center h-64">
+                hello image
+              </div>
+              <div className="lg:w-1/2 pl-4 pt-3">
+                <p>
+                  Proyecto realizado para desarrollar los conocimientos 
+                  acerca del manejo de formularios desde los mas básicos como los login hasta los mas complejos 
+                  teniendo en cuenta los tipos de campos como por ejemplos de tipo select, checkbox
+                  time, datetime etc.
+                  Se utilizaron librerias como React Hook Form para el manejo de los formularios y la lubreria YUP
+                  para las validaciones.
+                </p>
+                <button className="mt-6 bg-orange-500 text-gray-800 text-md font-semibold shadow-2xl 
+                      py-2 px-3 rounded-xl hover:scale-110 transition-all ease-in-out duration-200 active:scale-100">
+                Ver más
+              </button>
+              </div>
             </div>
           </div>
-          <div className="lg:flex pl-8 pr-8 mt-16 pb-4">
-            <div className="bg-gray-500 w-full lg:w-1/2 flex items-center justify-center">
-              hello image
-            </div>
-            <div className="lg:w-1/2 pl-4">
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
-                quas dolor nulla reprehenderit officiis tempore repellat,
-                fugiat, aliquam molestiae cupiditate exercitationem libero
-                obcaecati tempora, hic iste. Eos, ipsa consequatur. Repellendus.
-              </p>
-            </div>
-          </div>
-          <div className=" mt-16 ml-5 mr-5 pl-5 pr-5 pb-4">
+          <div className=" mt-6 ml-5 mr-5 pl-5 pr-5 pb-4">
             <div className="bg-slate-800 text-gray-300 rounded-2xl w-full lg:flex lg:flex-row-reverse p-5">
               <div className="bg-gray-500 rounded-lg w-full lg:w-1/2 flex items-center justify-center h-64">
                 hello image
@@ -208,6 +199,9 @@ export default function Home() {
 
       {/* footer section*/}
        <Footer />
+
+      {/* modal insance */}
+      <ContactModal isVisibe={showModal} onClose={() => setShowModal(false)}/>
     </>
   );
 }
