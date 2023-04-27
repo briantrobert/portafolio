@@ -1,26 +1,62 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import ContactModal from '../components/ui/Modal'
+import Modal from '../components/ui/Modal'
+import useWindowSize from '../components/hooks/useWindowSize'
 
 import { motion } from 'framer-motion'
 import Footer from '../components/ui/Footer'
 import SkillSection from '../components/ui/SkillSection'
+import CardContact from '../components/ui/CardContact'
+import MobileMenuModal from '../components/ui/MobileMenuModal'
+import MobileMenu from '../components/ui/MobileMenu'
+
+const svgVariants = {
+  hidden:{
+    rotate: -180
+  },
+  visible:{
+    rotate: 0,
+    transition: { duration: 0.2}
+  }
+}
+
+const pathVariants = {
+  hidden:{
+    opacity: 0,
+    pathLength: 0
+  },
+  visible:{
+    opacity: 1,
+    pathLength: 1,
+    transition: { 
+      duration: 0.8,
+      ease: "easeInOut"
+    }
+  }
+}
 
 export default function Home() {
-  const [showModal, setShowModal] = useState(false)
 
-  const [movileMenu,setMovileMenu] = useState(true);
 
-  
+  const [height, width] = useWindowSize();
+  const [showModal, setShowModal] = useState(false);
+  const [movileMenu,setMovileMenu] = useState(false);
+
   const openMovileMenu = () => {
-    setMovileMenu(!movileMenu)
-    
+      setMovileMenu(!movileMenu)
   }
+
+  useEffect(() => {
+    if(width >=770 ){
+      setMovileMenu(false);
+    }
+  }, [width])
+  
 
   return (
     <>
       {/* navbar section */}
-      <nav className="sticky top-0 z-10 flex justify-between bg-white/10 backdrop-blur-sm py-2">
+      <nav className="sticky top-0 flex justify-between bg-white/10 backdrop-blur-sm py-2">
         <div className="flex items-center lg:ml-28 ml-5">
           <motion.h1
             className="text-lg font-bold font-sans"
@@ -32,12 +68,13 @@ export default function Home() {
             <span className="text-orange-500">World</span>
           </motion.h1>
         </div>
-        <div className="flex items-center space-x-10">
+        <div className="flex items-center">
           <div className="hidden md:block space-x-10">
-            <motion.ul className="flex justify-items-start space-x-5"
-               initial={{ x: 550 }}
-               animate={{ x: 0 }}
-               transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
+            <motion.ul
+              className="flex justify-items-start space-x-5"
+              initial={{ x: 550 }}
+              animate={{ x: 0 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
             >
               <li className="py-1 px-2 text-lg text-gray-200 hover:bg-slate-200 hover:shadow-2xl  hover:text-cyan-500 active:bg-slate-700 transition-all ease-in-out duration-150 font-semibold rounded-2xl">
                 <Link href="/">
@@ -59,53 +96,58 @@ export default function Home() {
                   Resume
                 </button>
               </li>
+              <li>{/* button responsive movile menu */}</li>
             </motion.ul>
-          </div>
-          <div className="lg:pr-0 pr-5">
-            <button
-              type="button"
-              onClick={openMovileMenu}
-              className="block md:hidden items-center py-1 px-1 justify-center rounded-md text-gray-300 hover:bg-orange-500 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-800"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span className="sr-only">Open main menu</span>
-              {/* <!--Icon when menu is closed. Heroicon name: outline/bars-3 Menu open: "hidden", Menu closed: "block" --> */}
-              <svg
-                className="block h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-              {/* <!--Icon when menu is open. Heroicon name: outline/x-mark Menu open: "block", Menu closed: "hidden" --> */}
-              <svg
-                className="hidden h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
           </div>
         </div>
       </nav>
+      <div className="absolute flex flex-row-reverse justify-items-end w-full z-20 top-1 right-1">
+        <button
+          type="button"
+          onClick={openMovileMenu}
+          className="block md:hidden items-center py-1 px-1 justify-center rounded-md text-gray-300 hover:bg-orange-500 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-800"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span className="sr-only">Open main menu</span>
+          <motion.svg
+            className="block h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+            variants={svgVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* <!--Icon when menu is closed. Heroicon name: outline/bars-3 Menu open: "hidden", Menu closed: "block" --> */}
+           {!movileMenu  && <motion.path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              variants={pathVariants}
+            />}
+            {/* <!--Icon when menu is open. Heroicon name: outline/x-mark Menu open: "block", Menu closed: "hidden" --> */}
+            {movileMenu && <motion.path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+                variants={pathVariants}
+              />}
+          </motion.svg>
+        </button>
+      </div>
+      {/* <!--definition of movile menu with a modal--> */}
+
+      <MobileMenuModal
+        isVisibe={movileMenu}
+        onClose={() => setMovileMenu(false)}
+      >
+        <MobileMenu />
+      </MobileMenuModal>
+
       {/* <!-- landing page view section--> */}
       <div className="flex h-screen w-full bg-gray-900">
         <motion.div
@@ -129,11 +171,13 @@ export default function Home() {
             </h1>
 
             <Link href="/">
-              <button className="mt-3 bg-orange-500 
+              <button
+                className="mt-3 bg-orange-500 
                 text-md font-semibold shadow-2xl py-2 px-1 rounded-xl 
                 hover:scale-110 transition-all 
                 ease-in-out duration-200 active:scale-100"
-                onClick={() => setShowModal(true)}>
+                onClick={() => setShowModal(true)}
+              >
                 Acerca de mi
               </button>
             </Link>
@@ -157,17 +201,19 @@ export default function Home() {
               </div>
               <div className="lg:w-1/2 pl-4 pt-3">
                 <p>
-                  Proyecto realizado para desarrollar los conocimientos 
-                  acerca del manejo de formularios desde los mas básicos como los login hasta los mas complejos 
-                  teniendo en cuenta los tipos de campos como por ejemplos de tipo select, checkbox
-                  time, datetime etc.
-                  Se utilizaron librerias como React Hook Form para el manejo de los formularios y la lubreria YUP
-                  para las validaciones.
+                  Proyecto realizado para desarrollar los conocimientos acerca
+                  del manejo de formularios desde los mas básicos como los login
+                  hasta los mas complejos teniendo en cuenta los tipos de campos
+                  como por ejemplos de tipo select, checkbox time, datetime etc.
+                  Se utilizaron librerias como React Hook Form para el manejo de
+                  los formularios y la lubreria YUP para las validaciones.
                 </p>
-                <button className="mt-6 bg-orange-500 text-gray-800 text-md font-semibold shadow-2xl 
-                      py-2 px-3 rounded-xl hover:scale-110 transition-all ease-in-out duration-200 active:scale-100">
-                Ver más
-              </button>
+                <button
+                  className="mt-6 bg-orange-500 text-gray-800 text-md font-semibold shadow-2xl 
+                      py-2 px-3 rounded-xl hover:scale-110 transition-all ease-in-out duration-200 active:scale-100"
+                >
+                  Ver más
+                </button>
               </div>
             </div>
           </div>
@@ -178,16 +224,16 @@ export default function Home() {
               </div>
               <div className="lg:w-1/2 pl-4 pt-3">
                 <p>
-                  Proyecto realizado para desarrollar los conocimientos 
-                  acerca del manejo de formularios desde los mas básicos como los login hasta los mas complejos 
-                  teniendo en cuenta los tipos de campos como por ejemplos de tipo select, checkbox
-                  time, datetime etc.
-                  Se utilizaron librerias como React Hook Form para el manejo de los formularios y la lubreria YUP
-                  para las validaciones.
+                  Proyecto realizado para desarrollar los conocimientos acerca
+                  del manejo de formularios desde los mas básicos como los login
+                  hasta los mas complejos teniendo en cuenta los tipos de campos
+                  como por ejemplos de tipo select, checkbox time, datetime etc.
+                  Se utilizaron librerias como React Hook Form para el manejo de
+                  los formularios y la lubreria YUP para las validaciones.
                 </p>
                 <button className="mt-6 bg-orange-500 text-gray-800 text-md font-semibold shadow-2xl py-2 px-3 rounded-xl hover:scale-110 transition-all ease-in-out duration-200 active:scale-100">
-                Ver más
-              </button>
+                  Ver más
+                </button>
               </div>
             </div>
           </div>
@@ -195,13 +241,15 @@ export default function Home() {
       </div>
 
       {/* Skillset section */}
-       <SkillSection />
+      <SkillSection />
 
       {/* footer section*/}
-       <Footer />
+      <Footer />
 
-      {/* modal insance */}
-      <ContactModal isVisibe={showModal} onClose={() => setShowModal(false)}/>
+      {/* modal insances */}
+      <Modal isVisibe={showModal} onClose={() => setShowModal(false)}>
+        <CardContact />
+      </Modal>
     </>
   );
 }

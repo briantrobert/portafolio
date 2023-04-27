@@ -8,17 +8,17 @@ const backdrop = {
 
 const modal = {
   visible: { 
-    y: 0,
+    x: 0,
     opacity: 1,
     transition: { delay: 0.2 }
   },
   hidden: { 
-    y: "-100vh",
+    x: "100vw",
     opacity: 0
   }
 }
 
-export default function Modal({isVisibe, onClose, children}) {
+export default function MobileModal({isVisibe, onClose, children}) {
 
     if( !isVisibe ) return null;
 
@@ -32,8 +32,8 @@ export default function Modal({isVisibe, onClose, children}) {
     <AnimatePresence mode="wait">
       {isVisibe &&  
       
-           <motion.div id="wrapper" className='fixed inset-0 z-20 bg-black bg-opacity-25 
-               backdrop-blur-sm flex justify-center items-center'
+           <motion.div id="wrapper" className='fixed inset-0 z-10 bg-black bg-opacity-25 
+               backdrop-blur-sm'
                onClick={handleClose}
                variants={backdrop}
                initial="hidden"
@@ -42,13 +42,9 @@ export default function Modal({isVisibe, onClose, children}) {
                <motion.div className='w-full md:w-[500px] lg:w-[800px] flex flex-col'
                  variants={modal}
                  >
-                   <div className='p-2 rounded bg-gray-300'>
-                    <div className='flex flex-row-reverse pr-2'>
-                      <button className='text-black text-base font-bold place-self-end' onClick={() => onClose()}>X</button>
-                    </div>
-                      
+                 
                       {children}
-                   </div>
+    
                </motion.div>
            </motion.div>
         }
