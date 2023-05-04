@@ -1,4 +1,10 @@
 import React from 'react'
+import Link from 'next/link'
+import GithubIcon from '../svg/GithubSvg'
+import LinkedInIcon from '../svg/LinkedInIcon'
+import TelegramIcon from '../svg/TelegramIcon'
+import EmailSvg from '../svg/EmailSvg'
+import UserNameSvg from '../svg/UserNameSvg'
 
 function CardContact() {
   return (
@@ -18,6 +24,29 @@ function CardContact() {
         </div>
         <div className="pt-3">
           <h1>Contactame</h1>
+          <div className="flex space-x-3 pt-2">
+            {/* <!-- faltan los boton links con los iconos github telegram y linkedIn--> */}
+           
+              <Link
+                className="hover:scale-110 transition-all ease-in-out duration-200"
+                href={"/"}
+              >
+                <GithubIcon />
+              </Link>
+              <Link
+                className="hover:scale-110 transition-all ease-in-out duration-200"
+                href={"/"}
+              >
+                <LinkedInIcon />
+              </Link>
+              <Link
+                className="hover:scale-110 transition-all ease-in-out duration-200"
+                href={"/"}
+              >
+                <TelegramIcon />
+              </Link>
+         
+          </div>
         </div>
       </div>
       <div></div>

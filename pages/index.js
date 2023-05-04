@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import Modal from '../components/ui/Modal'
 import useWindowSize from '../components/hooks/useWindowSize'
 
 import { motion } from 'framer-motion'
 import Footer from '../components/ui/Footer'
 import SkillSection from '../components/ui/SkillSection'
+import Navbar from '../components/ui/Navbar'
 import CardContact from '../components/ui/CardContact'
 import MobileMenuModal from '../components/ui/MobileMenuModal'
+import PortFolioView from '../components/ui/PortFolioView'
+import HeroSection from '../components/ui/HeroSection'
 import MobileMenu from '../components/ui/MobileMenu'
 
 const svgVariants = {
@@ -56,52 +58,11 @@ export default function Home() {
   return (
     <>
       {/* navbar section */}
-      <nav className="sticky top-0 flex justify-between bg-white/10 backdrop-blur-sm py-2">
-        <div className="flex items-center lg:ml-28 ml-5">
-          <motion.h1
-            className="text-lg font-bold font-sans"
-            initial={{ y: -250 }}
-            animate={{ y: 0 }}
-            transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
-          >
-            <span className="text-gray-200">Hello </span>
-            <span className="text-orange-500">World</span>
-          </motion.h1>
-        </div>
-        <div className="flex items-center">
-          <div className="hidden md:block space-x-10">
-            <motion.ul
-              className="flex justify-items-start space-x-5"
-              initial={{ x: 550 }}
-              animate={{ x: 0 }}
-              transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
-            >
-              <li className="py-1 px-2 text-lg text-gray-200 hover:bg-slate-200 hover:shadow-2xl  hover:text-cyan-500 active:bg-slate-700 transition-all ease-in-out duration-150 font-semibold rounded-2xl">
-                <Link href="/">
-                  <span>Home</span>
-                </Link>
-              </li>
-              <li className="py-1 px-2 text-lg text-gray-200 hover:bg-slate-200 hover:shadow-2xl  hover:text-cyan-500 active:bg-slate-700 transition-all ease-in-out duration-150 font-semibold rounded-2xl">
-                <Link href="/">
-                  <span>Portafolio</span>
-                </Link>
-              </li>
-              <li className="py-1 px-2 text-lg text-gray-200 hover:bg-slate-200 hover:shadow-2xl hover:text-cyan-500 active:bg-slate-700 transition-all ease-in-out duration-150 font-semibold rounded-2xl">
-                <Link href="/">
-                  <span>Habilidades</span>
-                </Link>
-              </li>
-              <li>
-                <button className="border text-gray-200 border-gray-200 hover:border-gray-800 py-1 px-1 rounded-lg mr-5 text-lg shadow-xl font-semibold hover:text-gray-800 hover:bg-orange-500 hover:scale-110 active:scale-95 transition-all ease-in-out duration-150">
-                  Resume
-                </button>
-              </li>
-              <li>{/* button responsive movile menu */}</li>
-            </motion.ul>
-          </div>
-        </div>
-      </nav>
-      <div className="absolute flex flex-row-reverse justify-items-end w-full z-20 top-1 right-1">
+      <Navbar>
+      {/* mobile boton menu */}
+      
+
+      <div className="absolute flex flex-row-reverse justify-items-end w-full z-20 top-2 right-2">
         <button
           type="button"
           onClick={openMovileMenu}
@@ -138,110 +99,30 @@ export default function Home() {
               />}
           </motion.svg>
         </button>
-      </div>
+        </div>
+      </Navbar>
       {/* <!--definition of movile menu with a modal--> */}
 
       <MobileMenuModal
         isVisibe={movileMenu}
         onClose={() => setMovileMenu(false)}
       >
-        <MobileMenu />
+        <MobileMenu onClose={() => setMovileMenu(false)}/>
       </MobileMenuModal>
 
-      {/* <!-- landing page view section--> */}
-      <div className="flex h-screen w-full bg-gray-900">
-        <motion.div
-          className="flex w-full h-full lg:w-1/2 items-center justify-center"
-          initial={{ x: "-100vw" }}
-          animate={{ x: 0 }}
-          transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
-        >
-          <div className="lg:pl-24 pl-5 pr-5 rounded-lg m-6">
-            <h1 className="font-bold text-gray-200 text-3xl">
-              I'm a Front-end Web Developer
-            </h1>
-            <h1 className="text-sm mt-2 text-gray-200">
-              Welcome, thank you to coming this far, please stay
-            </h1>
-            <h1 className="mt-2 text-lg text-gray-200">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-              enim ipsum nostrum tempore aut dolorum deserunt placeat eligendi
-              odio iure ut suscipit corporis necessitatibus assumenda dicta,
-              commodi voluptatem ipsa. Dolorum!
-            </h1>
 
-            <Link href="/">
-              <button
-                className="mt-3 bg-orange-500 
-                text-md font-semibold shadow-2xl py-2 px-1 rounded-xl 
-                hover:scale-110 transition-all 
-                ease-in-out duration-200 active:scale-100"
-                onClick={() => setShowModal(true)}
-              >
-                Acerca de mi
-              </button>
-            </Link>
-          </div>
-        </motion.div>
-        <div className="hidden lg:flex lg:w-1/2 items-center justify-center">
-          <img className="md:p-15 mr-28 p-20 " src="/img/landing.png" alt="" />
-        </div>
-      </div>
+      {/* <!-- Hero section--> */}
+      <HeroSection setShowModal={setShowModal}/>
 
       {/* <!-- Portafolio view section--> */}
-      <div className="pt-5 pb-5 bg-gray-600">
-        <div className="flex items-center justify-center">
-          <h1 className="font-bold text-3xl text-gray-300">Portafolio</h1>
-        </div>
-        <div className="flex items-start flex-col justify-start mt-10">
-          <div className=" pt-5 ml-5 mr-5 pl-5 pr-5 pb-4">
-            <div className="bg-slate-800 text-gray-300 rounded-2xl w-full lg:flex p-5">
-              <div className="bg-gray-500 rounded-lg w-full lg:w-1/2 flex items-center justify-center h-64">
-                hello image
-              </div>
-              <div className="lg:w-1/2 pl-4 pt-3">
-                <p>
-                  Proyecto realizado para desarrollar los conocimientos acerca
-                  del manejo de formularios desde los mas básicos como los login
-                  hasta los mas complejos teniendo en cuenta los tipos de campos
-                  como por ejemplos de tipo select, checkbox time, datetime etc.
-                  Se utilizaron librerias como React Hook Form para el manejo de
-                  los formularios y la lubreria YUP para las validaciones.
-                </p>
-                <button
-                  className="mt-6 bg-orange-500 text-gray-800 text-md font-semibold shadow-2xl 
-                      py-2 px-3 rounded-xl hover:scale-110 transition-all ease-in-out duration-200 active:scale-100"
-                >
-                  Ver más
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className=" mt-6 ml-5 mr-5 pl-5 pr-5 pb-4">
-            <div className="bg-slate-800 text-gray-300 rounded-2xl w-full lg:flex lg:flex-row-reverse p-5">
-              <div className="bg-gray-500 rounded-lg w-full lg:w-1/2 flex items-center justify-center h-64">
-                hello image
-              </div>
-              <div className="lg:w-1/2 pl-4 pt-3">
-                <p>
-                  Proyecto realizado para desarrollar los conocimientos acerca
-                  del manejo de formularios desde los mas básicos como los login
-                  hasta los mas complejos teniendo en cuenta los tipos de campos
-                  como por ejemplos de tipo select, checkbox time, datetime etc.
-                  Se utilizaron librerias como React Hook Form para el manejo de
-                  los formularios y la lubreria YUP para las validaciones.
-                </p>
-                <button className="mt-6 bg-orange-500 text-gray-800 text-md font-semibold shadow-2xl py-2 px-3 rounded-xl hover:scale-110 transition-all ease-in-out duration-200 active:scale-100">
-                  Ver más
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div>
+        <PortFolioView />
       </div>
 
       {/* Skillset section */}
-      <SkillSection />
+      <div>
+        <SkillSection />
+      </div>
 
       {/* footer section*/}
       <Footer />

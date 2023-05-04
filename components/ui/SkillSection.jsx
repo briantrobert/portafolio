@@ -7,12 +7,13 @@ import ReactjsSvg from '../svg/ReactjsSvg'
 import TailwindcssSvg from '../svg/TailwindCssSvg'
 import FramerMotion from '../svg/FramerMotionSvg'
 import GraphQlSvg from '../svg/GraphqlSvg'
+import TypingText from '../hooks/TypingText'
 
 export default function SkillSection() {
   return (
-    <div className="pt-5 pb-12 bg-gray-900">
+    <div id="skillsets" className="pt-10 pb-12 bg-gray-900">
         <div className="flex items-center pt-5 justify-center">
-          <h1 className="font-bold text-3xl text-gray-300">Habilidades</h1>
+          <TypingText text="Habilidades" styleText="font-bold text-3xl text-gray-300 flex items-center justify-center"/>
         </div>
         <div className="grid grid-cols-2 lg:flex flex-col mb-5 w-full items-center justify-center">
           <div className="grid lg:flex lg:space-x-36 mt-8 mb-8 w-full items-center justify-center">
