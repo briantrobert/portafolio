@@ -1,11 +1,24 @@
-import React from "react";
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
-function ReactjsSvg() {
+function ReactjsSvg({itsMini = false}) {
+
+  let width = "60"
+  let height = "60"
+
+  if(itsMini){
+    width = "24";
+    height = "24"
+  }
+
   return (
+    <>
     <svg
+      data-tooltip-id="ReactjsTooltip"
+      data-tooltip-content="Reactjs"
       xmlns="http://www.w3.org/2000/svg"
-      width="60"
-      height="60"
+       width={width}
+      height={height}
       viewBox="0 0 24 24"
     >
       <g fill="#00D8FF" fillRule="evenodd">
@@ -16,6 +29,9 @@ function ReactjsSvg() {
         ></path>
       </g>
     </svg>
+
+<Tooltip id="ReactjsTooltip"/>
+</>
   );
 }
 

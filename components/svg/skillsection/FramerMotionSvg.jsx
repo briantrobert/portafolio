@@ -1,11 +1,24 @@
-import React from "react";
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
-function FramerMotion() {
+function FramerMotion({itsMini = false}) {
+
+  let width = "60"
+  let height = "60"
+
+  if(itsMini){
+    width = "24";
+    height = "24"
+  }
+
   return (
+    <>
     <svg
+      data-tooltip-id="FramerMotionTooltip"
+      data-tooltip-content="Framer-Motion"
       xmlns="http://www.w3.org/2000/svg"
-      width="60"
-      height="60"
+      width={width}
+      height={height}
       viewBox="3.7 3.7 43.6 43.6"
     >
       <path
@@ -18,6 +31,9 @@ function FramerMotion() {
         d="M25.5 25.5L14.6 36.4 3.7 47.3V3.7l10.9 10.9z"
       ></path>
     </svg>
+
+<Tooltip id="FramerMotionTooltip"/>
+</>
   );
 }
 

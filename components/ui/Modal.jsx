@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState} from 'react'
 import {motion, AnimatePresence} from 'framer-motion'
 
 const backdrop = {
@@ -20,7 +20,11 @@ const modal = {
 
 export default function Modal({isVisibe, onClose, children}) {
 
+  const [proyects, setProyects] = useState(false)
+
     if( !isVisibe ) return null;
+
+   
 
     const handleClose = (e) => {
           if( e.target.id === 'wrapper') onClose();
@@ -42,9 +46,9 @@ export default function Modal({isVisibe, onClose, children}) {
                <motion.div className='w-full md:w-[500px] lg:w-[800px] flex flex-col pt-7 pb-5 sm:pl-4 sm:pr-4'
                  variants={modal}
                  >
-                   <div className='p-2 rounded bg-gray-300'>
+                   <div className='p-2 rounded bg-neutral-700'>
                     <div className='flex flex-row-reverse pr-2'>
-                      <button className='text-black text-base font-bold place-self-end' onClick={() => onClose()}>X</button>
+                      <button className='text-white text-base font-bold place-self-end' onClick={() => onClose()}>X</button>
                     </div>
                       
                       {children}

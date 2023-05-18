@@ -29,3 +29,33 @@ export const childText = {
       },
     },
   };
+
+  export const heroSectWords = {
+    hidden: {
+      opacity: 0,
+      x: "-20vw",
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { 
+        delay: 0.3,
+        type: "spring",
+        stiffness: 200 }
+    },
+  };
+
+  export const portafolioCardsPhoto = {
+    hidden: {
+      opacity: 0,
+      x: "10vw",
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { 
+        delay: 0.3,
+        type: "spring",
+        stiffness: 200 }
+    },
+  };
