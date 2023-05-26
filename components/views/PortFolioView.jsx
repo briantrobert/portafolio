@@ -1,6 +1,6 @@
 import React from 'react'
 import TypingText from '../hooks/TypingText'
-import PortafolioCard from '../ui/PortafolioCard'
+import PortafolioCard from './PortafolioCard'
 import {dataProyectEs,dataProyectEn} from '../data/dataOfProyects'
 
 function PortFolioView({locale, portFolioSecc}) {

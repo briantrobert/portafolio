@@ -1,7 +1,7 @@
 import { Tooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css'
 
-function CssSvg({itsMini = false}) {
+function CssSvg({itsMini = false, itsSemi = false}) {
 
   let width = "60"
   let height = "60"
@@ -9,6 +9,9 @@ function CssSvg({itsMini = false}) {
   if(itsMini){
     width = "24";
     height = "24"
+  }else if(itsSemi){
+    width = "42";
+    height = "42"
   }
 
   return (

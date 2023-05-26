@@ -5,13 +5,14 @@ import useWindowSize from '../components/hooks/useWindowSize'
 import { allEnglish,allSpanish } from '@/i18n/en-es'
 import { motion } from 'framer-motion'
 import Footer from '../components/ui/Footer'
-import SkillSection from '../components/views/SkillSectionView'
+import SkillView from '../components/views/SkillView'
 import Navbar from '../components/ui/Navbar'
 import CardContact from '../components/views/CardContactView'
 import MobileMenuModal from '../components/ui/MobileMenuModal'
 import PortFolioView from '../components/views/PortFolioView'
 import HeroSection from '../components/views/HeroSectionView'
 import MobileMenu from '../components/ui/MobileMenu'
+import MyFooter from '@/components/ui/MyFooter'
 
 const svgVariants = {
   hidden:{
@@ -121,16 +122,16 @@ export default function Home() {
       </div>
 
       {/* Skillset section */}
-      <div className='lg:pt-0 pt-32'>
-        <SkillSection />
+      <div className='lg:pt-28 pt-32'>
+        <SkillView locale={languaje}/>
       </div>
 
       {/* footer section*/}
-      <Footer />
+      <MyFooter locale={languaje}/>
 
       {/* modal insances */}
       <Modal isVisibe={showModal} onClose={() => setShowModal(false)}>
-        <CardContact />
+        <CardContact locale={languaje}/>
       </Modal>
     </div>
   );

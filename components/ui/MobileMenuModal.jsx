@@ -32,7 +32,7 @@ export default function MobileModal({isVisibe, onClose, children}) {
     <AnimatePresence mode="wait">
       {isVisibe &&  
       
-           <motion.div id="wrapper" className='fixed inset-0 z-10 bg-black bg-opacity-25 
+           <motion.div id="wrapper" className='fixed inset-0 z-20 bg-black bg-opacity-25 
                backdrop-blur-sm'
                onClick={handleClose}
                variants={backdrop}

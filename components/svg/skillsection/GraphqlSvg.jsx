@@ -3,8 +3,8 @@ import 'react-tooltip/dist/react-tooltip.css'
 
 function GraphQlSvg({itsMini = false}) {
 
-  let width = "60"
-  let height = "60"
+  let width = "42"
+  let height = "42"
 
   if(itsMini){
     width = "24";

@@ -1,8 +1,13 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import {menuNavbar} from '../data/menuNavbar'
+import SwitchButton from './SwitchButton'
 
 function Navbar({children, locale}) {
+
+  const onclickState = () => {
+    console.log('aqui si')
+  }
 
   const [active, setActive] = useState(0)
 
@@ -19,7 +24,11 @@ function Navbar({children, locale}) {
             <span className="text-orange-500">{locale.title2}</span>
           </motion.h1>
         </div>
+        
         <div className="flex items-center">
+        <div className='z-30 mr-16 lg:mr-5'>
+          <SwitchButton />
+        </div>
           <div className="hidden md:block space-x-10 pr-4">
             <motion.ul
               className="flex justify-items-start space-x-5"

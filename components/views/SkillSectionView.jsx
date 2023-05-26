@@ -1,4 +1,3 @@
-import React from 'react'
 import CssSvg from '../../components/svg/skillsection/CssSvg'
 import HtmlSvg from '../../components/svg/skillsection/HtmlSvg'
 import JavaScriptSvg from '../../components/svg/skillsection/JavaScriptSvg'
@@ -9,11 +8,11 @@ import FramerMotion from '../../components/svg/skillsection/FramerMotionSvg'
 import GraphQlSvg from '../../components/svg/skillsection/GraphqlSvg'
 import TypingText from '../hooks/TypingText'
 
-export default function SkillSection() {
+export default function SkillSection({locale}) {
   return (
     <div id="skillsets" className="pt-10 pb-12 bg-gray-900">
         <div className="flex items-center pt-5 justify-center">
-          <TypingText text="Habilidades" styleText="font-bold text-3xl text-gray-300 flex items-center justify-center"/>
+          <TypingText text={locale.skillsectionName} styleText="font-bold text-3xl text-gray-300 flex items-center justify-center"/>
         </div>
         <div className="grid grid-cols-2 lg:flex flex-col mb-5 w-full items-center justify-center">
           <div className="grid lg:flex lg:space-x-36 mt-8 mb-8 w-full items-center justify-center">

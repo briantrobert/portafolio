@@ -2,7 +2,7 @@ import {useRef,useState, useEffect} from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import ProyectCard from './ProyectCard';
 import Modal from '../ui/Modal'
-import useWindowSize from '../../components/hooks/useWindowSize'
+import useWindowSize from '../hooks/useWindowSize'
 import MoreButton from '../ui/MoreButton'
 
 function PortafolioCard({simple = '',imgUrl = '', imgLeft, data={}}) {
@@ -40,8 +40,8 @@ function PortafolioCard({simple = '',imgUrl = '', imgLeft, data={}}) {
     }
     
       return (
-      <>
-          <div ref={targetRef} className="lg:flex space-y-5 lg:pt-3 lg:h-80 lg:w-3/4">
+      <div className='h-full w-full flex items-center justify-center'>
+          <div ref={targetRef} className="lg:flex lg:pt-3 lg:w-3/4">
             {
               imgLeft ?
                 <>
@@ -83,7 +83,7 @@ function PortafolioCard({simple = '',imgUrl = '', imgLeft, data={}}) {
         <Modal isVisibe={showModal} onClose={() => setShowModal(false)}>
           <ProyectCard data={data}/>
       </Modal>
-      </>
+      </div>
     );
   }
 

@@ -1,5 +1,5 @@
-import Code from '../svg/CodeSvg'
-import View from '../svg/ViewSvg'
+import CodeSvg from '../svg/cardproyect/CodeSvg'
+import PreviewSVG from '../svg/cardproyect/Preview'
 import Link from 'next/link'
 
 function ProyectCard({data}) {
@@ -38,10 +38,10 @@ function ProyectCard({data}) {
         </div>
         <div className='w-full flex space-x-4 items-end justify-end pr-5 pt-3'>
             <Link href={"/"} className="hover:scale-125 transition-all ease-in-out duration-200">
-               <Code />
+               <CodeSvg />
             </Link>
             <Link href={"/"} className="hover:scale-125 transition-all ease-in-out duration-200">
-              <View />
+              <PreviewSVG />
             </Link>
         </div>
       </div>

@@ -28,14 +28,14 @@ export const dataProyectEs = [
         id: 2,
         imgUrl: "/img/landing.png",
         simple:`Proyecto realizado para desarrollar los conocimientos acerca,
-                 del manejo de formularios desde los mas básicos como los login
-                 hasta los mas complejos...`,
+                 del manejo de los paneles de administración así como pantallas para 
+                 dar respuestas como soporte técnico de servicios...`,
         resume: `Proyecto realizado para desarrollar los conocimientos acerca,
-                  del manejo de formularios desde los mas básicos como los login
-                  hasta los mas complejos teniendo en cuenta los tipos de campos
-                  como por ejemplos de tipo select, checkbox time, datetime etc.
-                  Se utilizaron librerias como React Hook Form para el manejo de
-                  los formularios y la librería YUP para las validaciones.`,
+                 del manejo de los paneles de administración así como pantallas para 
+                 dar respuestas como soporte técnico de servicios,pantalla por la cual
+                 se manejan las quejas y sugerencias que tienen los clientes de una plataforma.Este
+                 panel de administración tambien permitiria visualizar los datos de formas distintas
+                 según desee el administrador de la aplicación...`,
         tUsedText:"Tecgnologías usadas",
         techUsed: [<HtmlSvg itsMini/>,<CssSvg itsMini/>,<JavaScriptSvg itsMini/>,<NextjsSvg itsMini/>,<GraphqlSvg itsMini/>],
         codeLink :"Github",

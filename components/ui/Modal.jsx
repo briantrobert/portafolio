@@ -20,11 +20,7 @@ const modal = {
 
 export default function Modal({isVisibe, onClose, children}) {
 
-  const [proyects, setProyects] = useState(false)
-
     if( !isVisibe ) return null;
-
-   
 
     const handleClose = (e) => {
           if( e.target.id === 'wrapper') onClose();
@@ -36,7 +32,7 @@ export default function Modal({isVisibe, onClose, children}) {
     <AnimatePresence mode="wait">
       {isVisibe &&  
       
-           <motion.div id="wrapper" className='fixed inset-0 z-20 bg-black bg-opacity-25 
+           <motion.div id="wrapper" className='fixed inset-0 z-20 bg-black bg-opacity-25
                backdrop-blur-sm flex justify-center items-center'
                onClick={handleClose}
                variants={backdrop}

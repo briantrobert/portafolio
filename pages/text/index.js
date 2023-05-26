@@ -1,10 +1,9 @@
-import React from 'react'
-import TestView from '../../components/views/TestView'
+import MyFooter from '@/components/ui/MyFooter'
 
 function test() {
+  
   return (
     <div>
-      <TestView />
     </div>
   )
 }
