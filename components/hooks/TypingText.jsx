@@ -17,8 +17,7 @@ const TypingText = ({ text, styleText }) => {
              <motion.h1 
                    variants={childText}
                    key={index}>
-                   {/* {word === " " ? "\u00A0" : word} */}
-                   {word}
+                   {word === " " ? "\u00A0" : word}
                    </motion.h1>
         
         )) 

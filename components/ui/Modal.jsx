@@ -39,7 +39,7 @@ export default function Modal({isVisibe, onClose, children}) {
                initial="hidden"
                animate="visible"
                exit="hidden">
-               <motion.div className='w-full md:w-[500px] lg:w-[800px] flex flex-col pt-7 pb-5 sm:pl-4 sm:pr-4'
+               <motion.div className='w-full md:w-[700px] lg:w-[900px] flex flex-col pt-7 pb-5 sm:pl-4 sm:pr-4'
                  variants={modal}
                  >
                    <div className='p-2 rounded bg-neutral-700'>

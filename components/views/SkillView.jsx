@@ -42,13 +42,13 @@ y = useTransform(scrollYProgress, [0, 1], ['0', '70px']);
       <div className="w-80 h-64">
         <div className="w-full flex justify-center items-center pb-5">
           <div className='w-full pl-5 pr-3'>
-            <hr />
+            <hr className="border-orange-500"/>
           </div>
-          <div >
+          <div className='mt-1 border-2 border-orange-500 p-2 rounded-full bg-gray-800'>
             <FrontendSVG />
           </div>
           <div className='w-full pl-3 pr-2'>
-            <hr />
+            <hr className="border-orange-500"/>
           </div>
         </div>
         <div className="w-full h-full pt-5">
@@ -73,13 +73,13 @@ y = useTransform(scrollYProgress, [0, 1], ['0', '70px']);
       <div className="w-80 h-40">
         <div className="w-full flex justify-center items-center pb-5">
           <div className='w-full pl-5 pr-3'>
-            <hr />
+            <hr className="border-orange-500"/>
           </div>
-          <div className='mt-1'>
+          <div className='mt-1 border-2 border-orange-500 p-2 rounded-full bg-gray-800'>
             <BackendSVG />
           </div>
           <div className='w-full pl-3 pr-2'>
-            <hr />
+            <hr className="border-orange-500"/>
           </div>
         </div>
         <div className="w-full h-full pt-5">
@@ -95,13 +95,13 @@ y = useTransform(scrollYProgress, [0, 1], ['0', '70px']);
       <div className="w-80 h-40">
       <div className="w-full flex justify-center items-center pb-5 text-orange-600">
           <div className='w-full pl-5 pr-3'>
-            <hr />
+            <hr className="border-orange-500"/>
           </div>
-          <div >
+          <div className='mt-1 border-2 border-orange-500 p-3 rounded-full bg-gray-800'>
             <ToolsSVG />
           </div>
           <div className='w-full pl-3 pr-2'>
-            <hr />
+            <hr className="border-orange-500"/>
           </div>
         </div>
         <div className="w-full h-full pt-5">

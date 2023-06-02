@@ -6,11 +6,11 @@ export const allEnglish = {
        "Portfolio",
        "Skills"
     ],
-    heroMainTitle1: "I'm a",
-    heroMainTitle2: "Front-end Web Developer",
+    heroMainTitle1: "I'm a ...",
+    heroMainTitle2: [" Briant Robert Mengana"," Front-end Web Developer"," Senior Degree Programmer"],
     heroH4:"Welcome, thank you to coming this far, please stay",
     heroLandingWords:`A web developer with more than 5 years of work experiences
-                      giving solitions to complex problems with accuracy and accuracy efficiency`,
+                      giving solitions to complex problems with accuracy and efficiency`,
     heroButton:"About..",
     portFolioSecc:"Portfolio",
     buttonSee:"See more",      
@@ -38,8 +38,8 @@ export const allSpanish = {
         "Portafolio",
         "Habilidades"
     ], 
-    heroMainTitle1: "Soy un",    
-    heroMainTitle2: "desarrollador Web Front-end",
+    heroMainTitle1: "Soy ...",    
+    heroMainTitle2: [" Briant Robert Mengana"," Desarrollador Web Front-End"," Programador Grado Senior"],
     heroH4:"Bienvenido, gracias por llegar hasta acá, le invito a continuar",
     heroLandingWords:`Desarrollador web con más de 5 años de experiencia laboral 
                       dando soluciones a problemas complejos con exactitud y eficiencia.`,

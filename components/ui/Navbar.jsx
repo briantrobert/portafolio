@@ -5,10 +5,6 @@ import SwitchButton from './SwitchButton'
 
 function Navbar({children, locale}) {
 
-  const onclickState = () => {
-    console.log('aqui si')
-  }
-
   const [active, setActive] = useState(0)
 
   return (
@@ -16,9 +12,9 @@ function Navbar({children, locale}) {
         <div className="flex items-center lg:ml-28 ml-5">
           <motion.h1
             className="text-lg font-bold font-sans"
-            initial={{ y: -250 }}
-            animate={{ y: 0 }}
-            transition={{ delay: 0.4, type: "spring", stiffness: 120 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7, duration: 3 }}
           >
             <span className="text-gray-200">{locale.title1} </span>
             <span className="text-orange-500">{locale.title2}</span>
@@ -32,9 +28,9 @@ function Navbar({children, locale}) {
           <div className="hidden md:block space-x-10 pr-4">
             <motion.ul
               className="flex justify-items-start space-x-5"
-              initial={{ y: -250 }}
-              animate={{ y: 0 }}
-              transition={{ delay: 0.5, type: "spring", stiffness: 120 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 3 }}
             >
               {
                 menuNavbar.map((menu, i) => (
