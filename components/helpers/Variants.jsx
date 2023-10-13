@@ -101,3 +101,31 @@ export const heroSectWords = {
         stiffness: 200 }
     },
   };
+
+  export const fadeInAnimationVariants = {
+    initial: {
+     opacity: 0,
+     y: 100,
+    },
+    animate: (index) => ({
+     opacity: 1,
+     y: 0,
+     transition: {
+       delay: 0.3 * index,
+     }
+    }),
+ }
+
+ export const fadeInAnimationVariantsSide = {
+  initial: {
+   opacity: 0,
+   x: 20,
+  },
+  animate: (index) => ({
+   opacity: 1,
+   x: 0,
+   transition: {
+     delay: 0.3 * index,
+   }
+  }),
+}

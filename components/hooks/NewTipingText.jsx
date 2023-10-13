@@ -9,7 +9,6 @@ function NewTypingText({ text, styleText }) {
     const texts = ['this', 'that', 'these'];
     const words = Array.from(text[textIndex])
   
-    console.log(mount)
     const Desmount=()=>{
       setTimeout(() => {
         setMount(false)

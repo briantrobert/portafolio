@@ -14,7 +14,7 @@ function Navbar({children, locale}) {
             className="text-lg font-bold font-sans"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.7, duration: 3 }}
+            transition={{ delay: 0.5, duration: 2 }}
           >
             <span className="text-gray-200">{locale.title1} </span>
             <span className="text-orange-500">{locale.title2}</span>
@@ -38,7 +38,7 @@ function Navbar({children, locale}) {
               <li key={i} 
                   className ={`py-1 px-2 text-lg ${ active == i ? 'text-orange-500' : 'text-gray-200'} 
                    hover:shadow-2xl  hover:text-orange-200
-                    transition-all ease-in-out duration-150 font-semibold rounded-lg`}>
+                   transition-all ease-in-out duration-150 font-semibold rounded-lg`}>
                 <a href={menu.href} onClick={() => setActive(i)}>
                   <span>{locale.navButton[i]}</span>
                 </a>

@@ -17,7 +17,6 @@ function MobileMenu({ onClose, locale}) {
             className="flex gap-2 text-gray-700 hover:bg-gray-400 hover:text-gray-900 px-2 py-2 w-full rounded-md text-base font-medium"
             onClick={() => onClose()}
           >
-            <HomeSVG />
             {locale.navButton[0]}
           </a>
         </div>
@@ -27,7 +26,6 @@ function MobileMenu({ onClose, locale}) {
             className="flex gap-2 text-gray-700 hover:bg-gray-400 hover:text-gray-900 px-2 py-2 w-full rounded-md text-base font-medium"
             onClick={() => onClose()}
           >
-           <PortafolioSVG />
            {locale.navButton[1]}
           </a>
         </div>
@@ -37,8 +35,16 @@ function MobileMenu({ onClose, locale}) {
             className="flex gap-2 text-gray-700 hover:bg-gray-400 hover:text-gray-900 px-2 py-2 w-full rounded-md text-base font-medium"
             onClick={() => onClose()}
           >
-          <SkillsetSVG />
           {locale.navButton[2]}
+          </a>
+        </div>
+        <div>
+          <a
+            href="#about"
+            className="flex gap-2 text-gray-700 hover:bg-gray-400 hover:text-gray-900 px-2 py-2 w-full rounded-md text-base font-medium"
+            onClick={() => onClose()}
+          >
+          {locale.navButton[3]}
           </a>
         </div>
       </div>

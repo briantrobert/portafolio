@@ -3,7 +3,7 @@ import PreviewSVG from '../svg/cardproyect/Preview'
 import Link from 'next/link'
 
 function ProyectCard({data}) {
-  const { resume, tUsedText, techUsed } = data
+  const { resume, tUsedText, techUsed, codeLink, hostedLink } = data
   return (
     <>
       <div className="w-full h-full lg:flex bg-neutral-700 text-gray-300">
@@ -37,10 +37,10 @@ function ProyectCard({data}) {
           <hr />
         </div>
         <div className='w-full flex space-x-4 items-end justify-end pr-5 pt-3'>
-            <Link href={"/"} className="hover:scale-125 transition-all ease-in-out duration-200">
+            <Link href={codeLink} className="hover:scale-125 transition-all ease-in-out duration-200">
                <CodeSvg />
             </Link>
-            <Link href={"/"} className="hover:scale-125 transition-all ease-in-out duration-200">
+            <Link href={hostedLink} className="hover:scale-125 transition-all ease-in-out duration-200">
               <PreviewSVG />
             </Link>
         </div>

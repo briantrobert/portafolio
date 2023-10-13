@@ -4,15 +4,16 @@ import Modal from '../components/ui/Modal'
 import useWindowSize from '../components/hooks/useWindowSize'
 import { allEnglish,allSpanish } from '@/i18n/en-es'
 import { motion } from 'framer-motion'
-import Footer from '../components/ui/Footer'
 import SkillView from '../components/views/SkillView'
 import Navbar from '../components/ui/Navbar'
 import CardContact from '../components/views/CardContactView'
 import MobileMenuModal from '../components/ui/MobileMenuModal'
 import PortFolioView from '../components/views/PortFolioView'
-import HeroSection from '../components/views/HeroSectionView'
 import MobileMenu from '../components/ui/MobileMenu'
 import MyFooter from '@/components/ui/MyFooter'
+import PersonalInteresView from '@/components/views/PersonalInteresView'
+import ContactMe from '@/components/views/ContactMe'
+import HeroSetction2 from '@/components/views/HeroSetction2'
 
 const svgVariants = {
   hidden:{
@@ -40,7 +41,6 @@ const pathVariants = {
 }
 
 export default function Home() {
-
 
   const { asPath, locale, locales} = useRouter()
   const languaje = locale === "en" ? allEnglish : allSpanish;
@@ -114,16 +114,24 @@ export default function Home() {
 
 
       {/* <!-- Hero section--> */}
-      <HeroSection setShowModal={setShowModal} locale={languaje}/>
+      {/* <HeroSection setShowModal={setShowModal} locale={languaje}/> */}
+      <HeroSetction2 setShowModal={setShowModal} locale={languaje}/>
 
       {/* <!-- Portafolio view section--> */}
       <div>
         <PortFolioView locale={locale} portFolioSecc={languaje.portFolioSecc}/>
       </div>
+      <div>
+        <PersonalInteresView locale={languaje} internal={locale}/>
+      </div>
 
       {/* Skillset section */}
       <div className='lg:pt-28 pt-32'>
         <SkillView locale={languaje}/>
+      </div>
+
+      <div>
+        <ContactMe locale={languaje}/>
       </div>
 
       {/* footer section*/}

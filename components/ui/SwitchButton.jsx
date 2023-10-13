@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 function SwitchButton() {
 
   const router = useRouter();
+  
   const handleChange = (data) => {
         router.push(router.pathname, router.pathname, {locale: data})
         data === 'es' ? setEsEn(false) : setEsEn(true);

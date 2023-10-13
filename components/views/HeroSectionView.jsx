@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import {heroSectWords} from '../helpers/Variants'
@@ -16,7 +15,7 @@ function HeroSection({setShowModal, locale}) {
           className="flex flex-col w-full h-full lg:w-1/2 items-start justify-center"
         >
         <div className='flex w-full lg:pl-24 pl-11'>
-          <h1 className="flex font-bold text-gray-200 text-3xl">
+          <h1 className="flex font-bold text-gray-200 md:text-3xl text-xl">
             {locale.heroMainTitle1} 
                <NewTypingText text={heroMainTitle2} styleText="font-bold flex items-center justify-center"/>
                
@@ -50,10 +49,13 @@ function HeroSection({setShowModal, locale}) {
           </div>
         </motion.div>
       </div>
-        <div className="hidden lg:flex lg:w-1/2 items-center justify-center">
-          <img className="md:p-15 mr-28 p-20 " src="/img/landing.png" alt="" />
-        </div>
+      <div className="hidden lg:flex lg:w-1/2 items-center justify-center pb-16 pr-14">
+        <img className="md:p-15 mr-10 p-20 " src="/img/landing.png" alt="" />
+        {/* <div className="block w-[360px] h-[420px]  overflow-hidden" style={{ borderTopLeftRadius: '75% 57%', borderTopRightRadius: '25% 54%', borderBottomRightRadius: '62% 46%', borderBottomLeftRadius: `38% 43%` }}>
+          <img className="w-full h-full object-fill" src="../img/portafolio4use.jpg" />
+        </div> */}
       </div>
+    </div>
   )
 }
 

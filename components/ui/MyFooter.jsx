@@ -2,57 +2,10 @@ import React from 'react'
 import LinkedInIcon from '../svg/LinkedInIcon'
 import TelegramIcon from '../svg/TelegramIcon'
 
-function MyFooter({locale}) {
+function MyFooter() {
   return (
-    <div className='h-48 w-full mt-24'>
-      <div className='flex sm:justify-between flex-col lg:flex-row items-center pl-14 pr-14 gap-10'>
-        <div className='mt-5'>
-            <div className='w-20 h-20 rounded-full object-cover overflow-hidden'>
-              <img src="./img/testPhoto.jpg" />
-            </div>
-        </div>
-        <div className='flex flex-col sm:flex-row text-white gap-x-48 pb-5 justify-center items-center gap-y-5'>
-            <div>
-              <div className='flex items-center justify-center'>
-               <h1>{locale.resources}</h1>
-              </div>
-            <div className='flex w-full justify-between pt-5'>
-              <ul className="text-gray-600 dark:text-gray-400 font-medium w-full">
-                <li className="mb-4">
-                  <a href="https://react.dev/" className="hover:underline">Reactjs</a>
-                </li>
-                <li>
-                  <a href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
-                </li>
-              </ul>
-              <ul className="text-gray-600 dark:text-gray-400 font-medium w-52">
-                <li className="mb-4">
-                  <a href="https://nextjs.org/" className="hover:underline">Nextjs</a>
-                </li>
-                <li>
-                  <a href="https://www.framer.com/motion/" className="hover:underline">Framer-Motion</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className='w-52 pl-16 lg:pl-0'>
-            <div>
-              <h1>{locale.footerFallow}</h1>
-            </div>
-            <div className='pt-5'>
-              <ul className="text-gray-600 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a href="https://github.com/briantrobert/portafolio" className="hover:underline ">Github</a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/briant-robert-mengana-846258258" className="hover:underline">LinkedIn</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="sm:flex sm:items-center sm:justify-between m-5 pt-10 pr-10">
+    <div className='fixed bottom-0 w-full bg-gray-950'>
+      <div className="flex flex-col sm:flex-row items-center sm:justify-between justify-center p-2 mr-5 ml-5">
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" className="hover:underline">Briant Robert Mengana</a>. All Rights Reserved.
         </span>
         <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
