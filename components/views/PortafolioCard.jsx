@@ -24,10 +24,10 @@ function PortafolioCard({ data={} }) {
             </div>
             <div className="absolute text-gray-50 font-bold bottom-0 bg-black/50 backdrop-blur-sm z-0 w-full flex flex-col pt-1 pl-5 space-y-1 pb-1">
               <div className="text-sm">
-                <h2>Next.js CRUD with MongDB</h2>
+                <h2>{data.cardTitle1}</h2>
               </div>
               <div className="text-xl pb-2">
-                <h1>Favorite Books Store</h1>
+                <h1>{data.cardTitle2}</h1>
               </div>
             </div>
           </div>  

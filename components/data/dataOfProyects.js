@@ -10,6 +10,17 @@ const justData = [
       {
           id:1,
           imgUrl: "/img/proyect1/b1.jpg",
+          allImages:[
+             {
+                  url:`/img/proyect1/b1.jpg`,
+            },{
+                  url:`/img/proyect1/b2.jpg`,
+            },{
+                  url:`/img/proyect1/b3.jpg`,
+            },{
+                  url:`/img/proyect1/b4.jpg`
+            }
+            ],
           techUsed: [<HtmlSvg itsMini/>,<JavaScriptSvg itsMini/>,<NextjsSvg itsMini/>,<TailwindcssSvg itsMini/>,<MongoDBSvg itsMini/>],
           codeLink :"https://github.com/briantrobert/nextjs_mongodb_crud/",
           hostedLink:"https://nextjs-mongodb-crud-five.vercel.app/",
@@ -54,6 +65,9 @@ export const dataProyectEs = [
         id: 1,
         see: dataSimpleEs.see,
         imgUrl: justData[0].imgUrl,
+        allImages: justData[0].allImages,
+        cardTitle1:`Next.js CRUD con MongDB`,
+        cardTitle2:`Tus Libros Favoritos....`,
         resume: `Proyecto realizado para desarrollar los conocimientos referentes
         a CREATE READ UPDATE DELETE(CRUD) usando tegnologías como MongoDB y su servicio en la nube
         MongoDB Atlas, fue realizado usando la ventaja de la carpeta API incluida en Nextjs. fue desplegada 
@@ -116,6 +130,9 @@ export const dataProyectEn = [
             id: 1,
             see: dataSimpleEn.see,
             imgUrl: justData[0].imgUrl,
+            allImages: justData[0].allImages,
+            cardTitle1:`Next.js CRUD with MongDB`,
+            cardTitle2:`Your Favorite Books....`,
             resume: `Project was created to develop knowledge about
             a CREATE READ UPDATE DELETE (CRUD) using technologies such as MongoDB and its cloud service
             MongoDB Atlas, was made using the advantage of the API folder included in Nextjs.Then was deployed
