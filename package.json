@@ -19,7 +19,8 @@
     "react-device-detect": "^2.2.3",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
-    "react-tooltip": "^5.11.2"
+    "react-tooltip": "^5.11.2",
+    "vercel": "^32.4.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
