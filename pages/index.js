@@ -130,7 +130,7 @@ export default function Home() {
         <SkillView locale={languaje}/>
       </div>
 
-      <div>
+      <div className='pb-16 md:pb-0'>
         <ContactMe locale={languaje}/>
       </div>
 

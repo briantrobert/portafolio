@@ -37,6 +37,10 @@ function ContactMe({locale}) {
       try {
          
          await sendContatcForm(values);
+         // await fetch('/api/contact', {
+         //    method: 'post',
+         //    body: JSON.stringify(values)
+         // });
          setState(initState);
          setState((prev) =>({
             ...prev,
@@ -79,7 +83,7 @@ function ContactMe({locale}) {
       <div className="flex justify-center items-center w-full md:w-1/2 lg:w-2/5 h-full">
          <div className="rounded-xl border-gray-500 shadow-2xl w-full">
             <div className="m-8">
-               <form onSubmit={onSubmitForm}>
+               <form method="post" onSubmit={onSubmitForm}>
                  <div className="flex flex-col gap-1 w-full">
                     <label className="font-semibold text-lg">{locale.yourName} <span className="text-red-500">*</span></label>
                     <input className="py-2 rounded-lg px-1 mt-1 text-black" required type="text" name="name" value={values.name} onChange={handleChange} placeholder="Jhon Doe" />
