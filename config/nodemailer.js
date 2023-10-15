@@ -9,12 +9,12 @@ export const transporter = nodemailer.createTransport({
     // host: "smtp.gmail.com",
     // port: 465,
     auth: {
-        user: email,
-        pass: pass,
+        user: 'briantrobert89@gmail.com',
+        pass: 'dgxkzvwtzgcuezzw',
     },
 })
 
 export const mailOptions = {
-    from: email,
-    to: email,
+    from: 'briantrobert89@gmail.com',
+    to: 'briantrobert89@gmail.com',
 }
