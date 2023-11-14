@@ -19,8 +19,8 @@ const personalDataEn = [
 },{
   title: "Profile",
   text: `I am currently a front-end developer on Reactjs and the
-         MaterialUI CSS framework at the Desoft Software
-         Development company in Santiago de Cuba.`,
+         MaterialUI CSS framework at the a software
+         development company in Santiago de Cuba.`,
   icon: <ProfileSvg />
 },{
   title: "Studies",
@@ -43,8 +43,8 @@ const personalDataEs = [
 },{
   title: "Perfil",
   text: `Actualmente soy desarrollador front-end en Reactjs y el 
-  framework para CSS MaterialUI en la empresa de Desarrollo de 
-  Software Desoft en Santiago de Cuba.`,
+  framework para CSS MaterialUI en una empresa de desarrollo de 
+  software en Santiago de Cuba.`,
   icon: <ProfileSvg />
 },{
   title: "Estudios",
