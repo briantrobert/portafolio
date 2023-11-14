@@ -141,7 +141,7 @@ function PersonalInteresView({locale,internal}) {
             <div className="overflow-hidden md:rounded-2xl rounded-full shadow-2xl border-2 border-blue-800 shadow-blue-600">
               <img
                 className="w-56 h-64 md:w-72 md:h-96"
-                src="/img/portafolio4use.jpg"
+                src="/img/photo.jpg"
                 alt=""
               />
             </div>
