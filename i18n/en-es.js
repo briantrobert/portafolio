@@ -24,7 +24,7 @@ export const allEnglish = {
                      Universidad de Oriente, Santiago de Cuba, Cuba since 2015 and up to the present always
                      updated with the movements around development for web and mobile platforms.
                      I am currently a front-end developer on Reactjs and the MaterialUI CSS framework at
-                     the Desoft Software Development company in Santiago de Cuba. Although my profile is front-end, I have already dabbled
+                     the a software development company in Santiago de Cuba. Although my profile is front-end, I have already dabbled
                      in fullstack profiles using Nextjs ,QraphQL, Prisma ,FastApi, some of which I present in this
                      portfolio as well as the use of Tailwindcss as a CSS framework according to current trends.`,
     contactMe:"Contact me",            
@@ -63,7 +63,7 @@ export const allSpanish = {
                      Universidad de Oriente ,Santiago de Cuba, Cuba desde 2015 y hasta la actualidad siempre
                      actualizado con los movimientos en torno al desarrollo para plataformas web y móviles.
                      Actualmente soy desarrollador front-end en Reactjs y el framework para CSS MaterialUI en
-                     la empresa de Desarrollo de Software Desoft en Santiago de Cuba. Aunque mi perfil sea front-end ya he incursionado
+                     la una empresa de desarrollo de software en Santiago de Cuba. Aunque mi perfil sea front-end ya he incursionado
                      en perfiles fullstack usando Nextjs ,QraphQL, Prisma ,FastApi, algnos de los cuales los presento en este
                      portafolio asi como el uso de Tailwindcss como framework CSS según las tendencias actuales.`,
     contactMe:"Contáctame",                 
