@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import {menuNavbar} from '../data/menuNavbar'
 import SwitchButton from './SwitchButton'
+import LogoSvg from '../svg/Navbar_Logo'
 
 function Navbar({children, locale}) {
 
@@ -16,8 +17,9 @@ function Navbar({children, locale}) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 2 }}
           >
-            <span className="text-gray-200">{locale.title1} </span>
-            <span className="text-orange-500">{locale.title2}</span>
+            <LogoSvg />
+            {/* <span className="text-gray-200">{locale.title1} </span>
+            <span className="text-orange-500">{locale.title2}</span> */}
           </motion.h1>
         </div>
         
